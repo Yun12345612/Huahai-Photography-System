@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS booking_photo (id BIGINT PRIMARY KEY AUTO_INCREMENT, booking_id BIGINT NOT NULL, category VARCHAR(20) NOT NULL, file_key VARCHAR(60) NOT NULL, original_name VARCHAR(200) NOT NULL, media_type VARCHAR(40) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, INDEX idx_photo_booking(booking_id));

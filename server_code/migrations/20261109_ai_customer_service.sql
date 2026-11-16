@@ -1,0 +1,11 @@
+ALTER TABLE chat_session ADD COLUMN ai_enabled TINYINT NOT NULL DEFAULT 1;
+ALTER TABLE chat_session ADD COLUMN assigned_admin_id BIGINT NULL;
+ALTER TABLE chat_session ADD COLUMN last_intent VARCHAR(64) NULL;
+ALTER TABLE chat_session ADD COLUMN closed_at DATETIME NULL;
+ALTER TABLE chat ADD COLUMN sender_type VARCHAR(16) NULL;
+ALTER TABLE chat ADD COLUMN model_name VARCHAR(80) NULL;
+ALTER TABLE chat ADD COLUMN prompt_tokens INT NULL;
+ALTER TABLE chat ADD COLUMN completion_tokens INT NULL;
+ALTER TABLE chat ADD COLUMN request_id VARCHAR(80) NULL;
+UPDATE chat SET sender_type='user' WHERE ask IS NOT NULL AND (sender_type IS NULL OR sender_type='');
+UPDATE chat SET sender_type=CASE WHEN adminid=0 THEN 'ai' ELSE 'admin' END WHERE reply IS NOT NULL AND (sender_type IS NULL OR sender_type='');

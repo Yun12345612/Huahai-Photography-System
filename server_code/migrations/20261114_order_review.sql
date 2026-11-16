@@ -1,0 +1,1 @@
+ALTER TABLE discusssheyingshixinxi ADD COLUMN booking_id BIGINT NULL, ADD COLUMN review_images TEXT NULL, ADD UNIQUE INDEX uk_review_booking(booking_id);

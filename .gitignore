@@ -1,0 +1,28 @@
+# IDE and local metadata
+.idea/
+.vscode/
+.codex-backups/
+
+# Frontend dependencies and builds
+**/node_modules/
+**/dist/
+**/.cache/
+
+# Java build output
+server_code/target/
+
+# Local environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Runtime logs and local screenshots
+**/*.log
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Local database/config backups
+*.sql.gz
+*.bak

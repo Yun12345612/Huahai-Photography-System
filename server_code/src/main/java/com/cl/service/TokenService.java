@@ -1,0 +1,26 @@
+package com.cl.service;
+
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.service.IService;
+import com.cl.entity.TokenEntity;
+import com.cl.utils.PageUtils;
+
+import java.util.List;
+import java.util.Map;
+
+
+/**
+ * token
+ */
+public interface TokenService extends IService<TokenEntity> {
+    PageUtils queryPage(Map<String, Object> params);
+
+    List<TokenEntity> selectListView(Wrapper<TokenEntity> wrapper);
+
+    PageUtils queryPage(Map<String, Object> params, Wrapper<TokenEntity> wrapper);
+
+    //获取token
+    String generateToken(Long userid, String username, String tableName, String role);
+    //根据token去数据表中查询
+    TokenEntity getTokenEntity(String token);
+}

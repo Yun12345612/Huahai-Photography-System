@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS booking_fulfillment (booking_id BIGINT PRIMARY KEY, package_name VARCHAR(200), service_content TEXT, stage VARCHAR(20) NOT NULL DEFAULT 'pending', delivery_url VARCHAR(1000), settlement_note VARCHAR(500), updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
